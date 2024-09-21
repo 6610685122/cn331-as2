@@ -5,4 +5,4 @@ Assignment 2
 นายชยวัฒน์ กาญจนะแก้ว 6610685122  
 
 
-![Uploading image.png…]()
+![image](https://github.com/user-attachments/assets/5d95cef9-a927-470a-a93d-ad60f89923a8)
