@@ -8,7 +8,7 @@ Assignment 2
 ![image](https://github.com/user-attachments/assets/5d95cef9-a927-470a-a93d-ad60f89923a8)
 
 Students(User) 
--หน้าแรกของเว็บจะให้ login logout
+-หน้าแรกของเว็บจะให้ login logout  
 -เมื่อ login เสร็จแล้วจะไปหน้า course(ลงทะเบียน)
 -หน้า course ประกอบด้วย
     -รายชื่อวิชาที่เปิดให้ลงทำเบียน
