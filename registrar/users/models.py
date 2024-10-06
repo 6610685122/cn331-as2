@@ -19,4 +19,4 @@ class QuotaRequest(models.Model):
     is_approved = models.BooleanField(default=False)
 
     def __str__(self):
-        return f"{self.user.username} - {self.course.name}" 
+        return f"{self.user.username} - {self.course.name}"  

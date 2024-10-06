@@ -15,5 +15,5 @@ urlpatterns = [
     path('my_quotas/', views.my_quota_requests, name='my_quota_requests'),
     path('cancel_quota/<int:request_id>/', views.cancel_quota_request, name='cancel_quota_request'),
 
-        ]
+        ] 
  

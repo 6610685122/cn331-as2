@@ -96,3 +96,4 @@ def cancel_quota_request(request, request_id):
         
         quota_request.delete()  # ลบคำขอโควต้า
     return redirect('my_quota_requests')
+ 

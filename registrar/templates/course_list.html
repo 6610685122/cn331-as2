@@ -1,16 +1,3 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <title>Course List</title>
-</head>
-
-<body>
-
-</body>
-
-</html>
-
 {% extends "base.html" %}
 
 {% block title %}Couse Page{% endblock %}
@@ -33,6 +20,10 @@
 
     {% endfor %}
     <a href="{% url 'my_quota_requests' %}">View My Quota Requests</a>
+    <form action="/" method="post" style="display:inline;">
+        {% csrf_token %}
+        <button type="submit">Logout</button>
+    </form>
     <form action="/" method="post" style="display:inline;">
         {% csrf_token %}
         <button type="submit">Logout</button>
