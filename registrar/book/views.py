@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Catagory, Book
 # Create your views here.
 def index(request):
@@ -8,3 +8,5 @@ def index(request):
         'catagories' : catagories,
         'books':books,
         })
+
+

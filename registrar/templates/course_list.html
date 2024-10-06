@@ -1,3 +1,16 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Course List</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+
 {% extends "base.html" %}
 
 {% block title %}Couse Page{% endblock %}
@@ -6,17 +19,20 @@
 <h1>Welcome to Registration</h1>
 
 <h2>Available Courses</h2>
+
 <ul>
     {% for course in courses %}
     <li>{{ course.code }} - {{ course.name }} ({{ course.seats }} seats available)
         {% if course.is_quota_open %}
         <a href="{% url 'request_quota' course.id %}">Request Quota</a>
-        <a href="{% url 'my_quota_requests' %}">View My Quota Requests</a>
-
         {% else %}
+
         Quota request closed
         {% endif %}
     </li>
+
     {% endfor %}
+    <a href="{% url 'my_quota_requests' %}">View My Quota Requests</a>
+
 </ul>
 {% endblock %}

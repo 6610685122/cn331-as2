@@ -1,6 +1,7 @@
-from django.db import models # type: ignore
+from django.db import models 
 from django.utils.html import format_html
-# Create your models here.
+from django.contrib.auth.models import User
+
 
 BOOK_LEVEL_CHOICE = (
     ('B','Basic'),
@@ -36,9 +37,9 @@ class Book(models.Model):
     created  = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
 
-    def show_image(self):
-       return format_html('img src="%s" height="40px">'% self.image.url)
-    show_image.allow_tags =True
+   #def show_image(self):
+   #   return format_html('img src="%s" height="40px">'% self.image.url)
+   #show_image.allow_tags =True
 
     def __str__(self) -> str:
         return self.name
@@ -57,3 +58,4 @@ class BookComment(models.Model):
     def __str__(self) -> str:
         return self.comment 
     
+

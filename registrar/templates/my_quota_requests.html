@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}Couse Page{% endblock %}
+
+{% block content %}
+<h1>My Approved Quota Requests</h1>
+<ul>
+    {% for request in quota_requests %}
+    <li>
+        {{ request.course.name }} - {{ request.course.code }}
+        <a href="{% url 'cancel_quota_request' request.id %}">Cancel</a>
+    </li>
+    {% empty %}
+    <li>No approved quota requests.</li>
+    {% endfor %}
+</ul>
+<a href="{% url 'course_list' %}">Back to Courses</a>
+{% endblock %}
