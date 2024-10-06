@@ -20,7 +20,7 @@ def signup_view(request):
         if form.is_valid():
             user = form.save()
             auth_login(request, user)  # ล็อกอินหลังจากสมัครสมาชิกสำเร็จ
-            return redirect('course')  # เปลี่ยนไปหน้า home หลังจากล็อกอิน
+            return redirect('course_list')  # เปลี่ยนไปหน้า home หลังจากล็อกอิน
     else:
         form = UserCreationForm()
     return render(request, 'signup.html', {'form': form})

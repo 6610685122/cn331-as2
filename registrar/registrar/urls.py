@@ -27,12 +27,7 @@ urlpatterns = [
     path('course/', views.course_list, name='course_list'),
     path('course/request/<int:course_id>/', views.request_quota, name='request_quota'),
     path('quota_success/', views.quota_success, name='quota_success'),
-    path('book/', include(('book.urls','book'), namespace='book')),
-    path('my_quotas/', views.my_quota_requests, name='my_quota_requests'),
-    path('cancel_quota/<int:request_id>/', views.cancel_quota_request, name='cancel_quota_request'),
-    path('course/request/<int:course_id>/', views.request_quota, name='request_quota'),
-    path('quota_success/', views.quota_success, name='quota_success'),
     path('my_quotas/', views.my_quota_requests, name='my_quota_requests'),
     path('cancel_quota/<int:request_id>/', views.cancel_quota_request, name='cancel_quota_request'),
 
-    ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT )
+    ]
