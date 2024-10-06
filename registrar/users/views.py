@@ -18,7 +18,7 @@ def signup_view(request):
     if request.method == 'POST':
         form = UserCreationForm(request.POST)
         if form.is_valid():
-            user = form.save()
+            user = form.save()  
             auth_login(request, user)  # ล็อกอินหลังจากสมัครสมาชิกสำเร็จ
             return redirect('course_list')  # เปลี่ยนไปหน้า home หลังจากล็อกอิน
     else:

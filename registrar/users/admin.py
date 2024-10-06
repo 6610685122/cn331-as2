@@ -11,4 +11,4 @@ class CourseAdmin(admin.ModelAdmin):
 class QuotaRequestAdmin(admin.ModelAdmin):
     list_display = ('user', 'course', 'is_approved')
     list_filter = ('course', 'is_approved')
-    search_fields = ('user__username', 'course__name')
+    search_fields = ('user__username', 'course__name') 

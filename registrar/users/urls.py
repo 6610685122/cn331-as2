@@ -16,3 +16,4 @@ urlpatterns = [
     path('cancel_quota/<int:request_id>/', views.cancel_quota_request, name='cancel_quota_request'),
 
         ]
+ 
