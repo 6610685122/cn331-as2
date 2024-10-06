@@ -33,6 +33,9 @@
 
     {% endfor %}
     <a href="{% url 'my_quota_requests' %}">View My Quota Requests</a>
-
+    <form action="/" method="post" style="display:inline;">
+        {% csrf_token %}
+        <button type="submit">Logout</button>
+    </form>
 </ul>
 {% endblock %}
