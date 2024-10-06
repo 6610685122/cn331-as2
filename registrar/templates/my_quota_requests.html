@@ -1,19 +1,43 @@
 {% extends "base.html" %}
 
-{% block title %}Couse Page{% endblock %}
+{% block title %}Course Page{% endblock %}
 
 {% block content %}
+<style>
+    .btn-custom {
+        background-color: white;
+        color: black;
+        border: 2px solid #ffffff; /* กรอบสีดำ */
+        padding: 10px 20px;
+        text-decoration: none;
+        border-radius: 5px; /* เพิ่มความโค้งให้กับปุ่ม */
+        display: inline-block;
+        transition: background-color 0.3s ease, border-color 0.3s ease; /* เพิ่ม transition ให้กับการเปลี่ยนแปลง */
+    }
+    .btn-custom-2 {
+        color: rgb(255, 0, 0);
+        text-decoration: none;
+        border-radius: 5px; /* เพิ่มความโค้งให้กับปุ่ม */
+        display: inline-block;
+        transition: background-color 0.3s ease, border-color 0.3s ease; /* เพิ่ม transition ให้กับการเปลี่ยนแปลง */
+    }
+    .btn-custom:hover {
+        background-color: #f8f9fa; /* สีเทาอ่อนเมื่อ hover */
+        border-color: #333; /* กรอบสีเข้มขึ้นเมื่อ hover */
+    }
+
+</style>
 <h1>My Approved Quota Requests</h1>
-<ul>
+<ul class="list-unstyled">
     {% for request in quota_requests %}
-    <li>
+    <li class="mb-3">
         {{ request.course.name }} - {{ request.course.code }}
-        <a href="{% url 'cancel_quota_request' request.id %}">Cancel</a>
+        <a href="{% url 'cancel_quota_request' request.id %}" class="btn btn-custom-2">Cancel</a>
     </li>
     {% empty %}
     <li>No approved quota requests.</li>
     {% endfor %}
 </ul>
-<a href="{% url 'course_list' %}">Back to Courses</a>
+<a href="{% url 'course_list' %}" class="btn btn-custom">Back to Courses</a>
 
 {% endblock %}

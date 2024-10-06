@@ -5,17 +5,66 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up</title>
+    <style>
+        /* Set the entire body to be centered and the background to black */
+        body {
+            display: flex;
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+            height: 100vh; /* Full viewport height */
+            margin: 0; /* Remove default margin */
+            background-color: black; /* Black background */
+            font-family: Arial, sans-serif; /* Set a clean font */
+        }
+
+        /* Style the container holding the content */
+        .container {
+            background-color: rgb(255, 127, 127); /* Red background for the content box */
+            padding: 30px; /* Space inside the box */
+            border-radius: 10px; /* Rounded corners */
+            text-align: center; /* Center the text inside the box */
+            width: 300px; /* Fixed width for the form */
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.2); /* Add subtle shadow */
+        }
+
+        /* Style the button */
+        button {
+            padding: 10px 20px; /* Padding for the button */
+            border: none; /* Remove border */
+            border-radius: 5px; /* Rounded corners */
+            background-color: white; /* White button */
+            color: rgb(0, 0, 0); /* Black text */
+            cursor: pointer; /* Pointer cursor on hover */
+            transition: background-color 0.3s; /* Smooth background color transition */
+        }
+
+        button:hover {
+            background-color: lightgray; /* Button color change on hover */
+        }
+
+        /* Style the red-link class for the login link */
+        .red-link {
+            color: rgb(255, 0, 0); /* White text for the link */
+        }
+
+        .red-link:hover {
+            color: lightgray; /* Light gray on hover */
+        }
+    </style>
 </head>
 
 <body>
-    <h2>Sign Up</h2>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Sign Up</button>
-    </form>
+    <div class="container">
+        <h2>Sign Up</h2>
+        <hr>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Sign Up</button>
+        </form>
 
-    <p>Already have an account? <a href='/'>Login here</a></p>
+        <p>Already have an account? <a href='/' class="red-link">Login here</a></p>
+    </div>
 </body>
 
 </html>

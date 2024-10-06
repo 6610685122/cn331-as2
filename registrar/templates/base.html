@@ -9,8 +9,52 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
+    
     <title>{% block title %}Default{% endblock %}</title>
+
+    <style>
+        body {
+            background-color: black; /* เปลี่ยนสีพื้นหลังของ body เป็นสีดำ */
+            color: white; /* สีตัวอักษรเป็นสีขาว */
+        }
+
+        .navbar-brand {
+            color: white !important; /* เปลี่ยนสี Klongnueng University เป็นสีขาว */
+        }
+
+        .content-wrapper {
+            background-color: rgb(255, 127, 127); /* สีพื้นหลังของกรอบ */
+            border-radius: 8px; /* มุมมน */
+            padding: 20px; /* ระยะห่างภายในกรอบ */
+            margin: 20px auto; /* ระยะห่างด้านบนและล่าง */
+            max-width: 800px; /* ความกว้างสูงสุดของกรอบ */
+            text-align: center; /* จัดเนื้อหาให้อยู่กลาง */
+        }
+
+        h1 {
+            text-align: center; /* จัดตำแหน่งข้อความให้ตรงกลาง */
+            margin-top: 20px; /* ระยะห่างด้านบน */
+            margin-bottom: 20px; /* ระยะห่างด้านล่าง */
+        }
+
+        .btn-login-signup {
+            background-color: red; /* เปลี่ยนสีพื้นหลังของปุ่ม Login และ Sign-up เป็นสีแดง */
+            border: none; /* เอาขอบออก */
+            color: white; /* เปลี่ยนสีตัวอักษรในปุ่มเป็นสีขาว */
+        }
+        /* styles.css */
+        .custom-login-button {
+            border: 2px solid #ffffff; /* Change the color as needed */
+            background-color: white; /* Change background color as needed */
+            color: #000000; /* Change text color as needed */
+        }
+        /* styles.css */
+        .red-link {
+            color: red; /* Change the color to red */
+        }
+
+
+    </style>
 </head>
 
 <body>
@@ -19,29 +63,21 @@
 
     <div class="container">
         <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
-            <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+            <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto navbar-brand text-decoration-none">
                 <svg class="bi me-2" width="40" height="32">
                     <use xlink:href="#bootstrap" />
                 </svg>
                 <span class="fs-4">Klongnueng University</span>
             </a>
-
-            <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-                <li><a href="#" class="nav-link px-2 link-secondary">Home</a></li>
-                <li><a href="#" class="nav-link px-2 link-dark">Features</a></li>
-                <li><a href="#" class="nav-link px-2 link-dark">About</a></li>
-            </ul>
-            <div class="col-md-3 text-end">
-                <button type="button" class="btn btn-outline-primary me-2">Login</button>
-                <button type="button" class="btn btn-primary mx-2">Sign-up</button>
-            </div>
         </header>
     </div>
 
     <div class="container">
-
-        {% block content %}{% endblock %}
+        <div class="content-wrapper">
+            {% block content %}{% endblock %}
+        </div>
     </div>
+    
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
@@ -55,6 +91,5 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
     -->
 </body>
-
 
 </html>
