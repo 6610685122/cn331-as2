@@ -1,12 +1,29 @@
 {% extends "base.html" %}
 
-{% block title %}Couse Page{% endblock %}
+{% block title %}Course Page{% endblock %}
 
 {% block content %}
+<style>
+    .btn-custom {
+    background-color: white;
+    color: black;
+    border: 2px solid #ffffff; /* สีของกรอบเป็นสีดำ */
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px; /* เพิ่มความโค้งให้กับปุ่ม */
+    display: inline-block; /* เพื่อให้ปุ่มแสดงผลเป็นบล็อกแบบอินไลน์ */
+    }
 
+    .btn-custom:hover {
+        background-color: #f8f9fa; /* สีเทาอ่อนเมื่อ hover */
+        color: black;
+        border-color: #333; /* กรอบสีเข้มขึ้นเมื่อ hover */
+    }   
+</style>
 <h1>Quota Request Successful!</h1>
 
 <p>You have successfully requested a quota for this course.</p>
-<a href="{% url 'course_list' %}">Back to Courses</a>
+
+<a href="{% url 'course_list' %}" class="btn btn-custom">Back to Courses</a>
 
 {% endblock %}

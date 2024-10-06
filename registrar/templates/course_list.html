@@ -1,30 +1,32 @@
 {% extends "base.html" %}
 
-{% block title %}Couse Page{% endblock %}
+{% block title %}Course Page{% endblock %}
 
 {% block content %}
-<h1>Welcome to Registration</h1>
+<h1>Welcome to Registration</h1><hr><br>
 
-<h2>Available Courses</h2>
+<h2>Available Courses</h2><br>
 
-<ul>
+<ul class="list-unstyled">
     {% for course in courses %}
-    <li>{{ course.code }} - {{ course.name }} ({{ course.seats }} seats available)
+    <li class="mb-3">
+        <strong>{{ course.code }} - {{ course.name }}</strong> ({{ course.seats }} seats available)
         {% if course.is_quota_open %}
-        <a href="{% url 'request_quota' course.id %}">Request Quota</a>
+        <a href="{% url 'request_quota' course.id %}" class="btn btn-light">Request Quota</a>
         {% else %}
-
-        Quota request closed
+        <p class="text-danger">Quota request closed</p>
         {% endif %}
     </li>
-
     {% endfor %}
-    <a href="{% url 'my_quota_requests' %}">View My Quota Requests</a>
-    <form action="/" method="post" style="display:inline;">
-        {% csrf_token %}
-        <button type="submit">Logout</button>
-    </form>
-
 </ul>
+
+<div class="mb-3">
+    <a href="{% url 'my_quota_requests' %}" class="btn btn-dark">View My Quota Requests</a>
+</div>
+
+<form action="/" method="post" class="d-inline">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger">Logout</button>
+</form>
 
 {% endblock %}
