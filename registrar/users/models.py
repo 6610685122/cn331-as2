@@ -1,6 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.shortcuts import render, get_object_or_404
+from django.test import TestCase
+
 
 class Course(models.Model):
     code = models.CharField(max_length=10)

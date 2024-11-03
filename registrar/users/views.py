@@ -6,14 +6,6 @@ from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import login as auth_login, authenticate, logout as auth_logout
 from .models import Course, QuotaRequest
 
-
-def index(request):
-   return render(request, 'index.html')
-
-def hello(request,id):
-    
-    return HttpResponse('Hello World' + str(id))
-
 def signup_view(request):
     if request.method == 'POST':
         form = UserCreationForm(request.POST)
@@ -47,13 +39,6 @@ def logout_view(request):
     return redirect('login')  # กลับไปที่หน้า login หลัง logout
 
 
-
-
-#def course(request):
-#    return render(request, 'course.html')
-    
-
-
 def course_list(request):
     courses = Course.objects.all()
     return render(request, 'course_list.html', {'courses': courses})
@@ -75,6 +60,7 @@ def request_quota(request, course_id):
         return redirect('quota_success')
     else:
         return render(request, 'error.html', {'message': 'This subject has full seat. Please try again.'})
+
 
 def quota_success(request):
     # หน้าสำเร็จหลังจากขอโควต้า
