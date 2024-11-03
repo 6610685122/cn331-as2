@@ -18,6 +18,7 @@ jobs:
         pip install django
         pip install coverage
     - name: Run Tests
+      working-directory: registrar
       run: |
          python manage.py makemigrations
          python manage.py migrate
